@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Form.Name"></label>
+        <input asp-for="Form.Name" class="form-control" />
+        <b><span asp-validation-for="Form.Name" class="text-danger"></span></b>
+        <br />
+        <br />
+        <label asp-for="Form.Year"></label>
+        <input asp-for="Form.Year" class="form-control" /><br />
+        <b><span asp-validation-for="Form.Year" class="text-danger"></span></b>
+        <br />
+        <button type="submit" class="btn btn-primary mt-2">Zatwierdź</button>
+        @{
+            if (Model.YearResponse != null)
+            {
+                 <br/>
+                <div class="alert alert-success" role="alert">
+                    @Model.YearResponse
+                </div>
+            }
+        }
+    </div>
+</form>

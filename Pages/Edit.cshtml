@@ -1,0 +1,55 @@
+﻿@page
+@model PS6.Pages.History.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>YearValidationResult</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="YearValidationResult.Id" />
+            <div class="form-group">
+                <label asp-for="YearValidationResult.Year" class="control-label"></label>
+                <input asp-for="YearValidationResult.Year" class="form-control" />
+                <span asp-validation-for="YearValidationResult.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearValidationResult.Result" class="control-label"></label>
+                <input asp-for="YearValidationResult.Result" class="form-control" />
+                <span asp-validation-for="YearValidationResult.Result" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearValidationResult.TimeAdded" class="control-label"></label>
+                <input asp-for="YearValidationResult.TimeAdded" class="form-control" />
+                <span asp-validation-for="YearValidationResult.TimeAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearValidationResult.UserLogin" class="control-label"></label>
+                <input asp-for="YearValidationResult.UserLogin" class="form-control" />
+                <span asp-validation-for="YearValidationResult.UserLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearValidationResult.UserId" class="control-label"></label>
+                <input asp-for="YearValidationResult.UserId" class="form-control" />
+                <span asp-validation-for="YearValidationResult.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

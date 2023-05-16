@@ -1,0 +1,60 @@
+﻿@page
+@model PS6.Pages.History.IndexModel
+
+@{
+    ViewData["Title"] = "Historia wyszukiwań";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.YearValidationResult[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearValidationResult[0].Result)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearValidationResult[0].TimeAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearValidationResult[0].UserLogin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearValidationResult[0].UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.YearValidationResult) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Result)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TimeAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

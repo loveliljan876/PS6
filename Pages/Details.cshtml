@@ -1,0 +1,49 @@
+﻿@page
+@model PS6.Pages.History.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>YearValidationResult</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearValidationResult.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearValidationResult.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearValidationResult.Result)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearValidationResult.Result)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearValidationResult.TimeAdded)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearValidationResult.TimeAdded)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearValidationResult.UserLogin)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearValidationResult.UserLogin)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.YearValidationResult.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.YearValidationResult.UserId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.YearValidationResult?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
